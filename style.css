@@ -1,3 +1,375 @@
-h1 {
-    color: rosybrown;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: white;
+  --darkgrey: rgb(79, 74, 74);
+  --grey: #1a9862;
+  --lightgrey: rgb(156, 154, 154);
+}
+
+.header {
+  background: rgb(255, 255, 255);
+  height: 64px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.navbar__left {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  height: 32px;
+}
+.navbar__logo {
+  cursor: pointer;
+}
+.navbar__logo--image {
+  display: block;
+  width: 100%;
+}
+.navbar__text {
+  font-size: 15px;
+}
+.navbar__right {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar__mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 720px) {
+  .navbar {
+    display: none;
+  }
+
+  .navbar__mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+}
+/* #### HERO */
+
+.hero {
+  background-color: rgb(228, 227, 227);
+  display: flex;
+  padding: 32px 24px 32px 24px;
+  gap: 24px;
+}
+.hero__left {
+  /* background: rgb(19, 12, 2); */
+  flex: 6;
+}
+.hero__image {
+  overflow: hidden;
+}
+.hero__image--item {
+  display: block;
+  width: 100%;
+}
+
+.hero__right {
+  flex: 4;
+}
+.hero__text {
+  /* padding-left: 24px; */
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.hero__text--title {
+  font-size: 30px;
+}
+.hero__text--subtitle {
+  font-size: 15px;
+}
+.hero__text--button {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: rgb(63, 62, 62);
+  border: 0;
+  cursor: pointer;
+}
+@media only screen and (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+    padding: 0;
+  }
+  .hero__text {
+    padding: 32px 16px;
+    gap: 24px;
+  }
+  .hero__text--title {
+    margin-bottom: 8px;
+  }
+}
+/* #### INFORMATION */
+
+.info {
+  display: flex;
+  padding: 32px 24px 32px 24px;
+  gap: 24px;
+}
+.info__left {
+  flex: 6;
+}
+.info__left--image {
+  display: block;
+  width: 100%;
+}
+.info__left--text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+.info__left--title {
+  font-size: 40px;
+}
+.info__left--subtitle {
+  font-size: 18px;
+}
+.info__left--author {
+  font-size: 14px;
+}
+.info__right {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+.info__card {
+  flex: 1;
+  display: flex;
+  padding: 16px;
+}
+.info__card:hover {
+  background: rgb(206, 203, 203);
+}
+.info__card--image {
+  flex: 3.5;
+  overflow: hidden;
+}
+.info__item {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+}
+.info__card--text {
+  flex: 6.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  gap: 8px;
+}
+a {
+  text-decoration: none;
+}
+@media only screen and (max-width: 720px) {
+  .info__left {
+    display: none;
+  }
+  .info__card {
+    display: block;
+  }
+  .info__card--text {
+    display: inline;
+  }
+}
+
+.subject {
+  padding: 32px 72px 32px 72px;
+  text-align: center;
+  background-color: lightgrey;
+  color: rgb(0, 0, 0);
+}
+.subject__title {
+  margin-bottom: 32px;
+  font-size: 20px;
+}
+
+.subject__body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.subject__item {
+  /* width: 33.33%; */
+  width: calc((100% - 64px) / 3);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.subject__item--img {
+  display: flex;
+}
+.subject__item--text {
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  flex-grow: 1;
+}
+.item__text--title {
+  font-size: 20px;
+}
+.item-img {
+  overflow: hidden;
+  width: 100%;
+}
+@media only screen and (max-width: 720px) {
+  .subject {
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: white;
+    color: var(--darkgrey);
+  }
+  .subject__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+  .subject__item--img,
+  .item__text--subtitle,
+  .item__text--lasttitle {
+    display: none;
+  }
+  .subject__body {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .subject__item {
+    width: 100%;
+    background-color: lightgrey;
+    color: rgb(110, 109, 109);
+  }
+  .subject__item--text {
+    padding: 24px 16px 24px 16px;
+  }
+}
+
+.thesis {
+  padding: 32px 72px 32px 72px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.thesis__title {
+  margin-bottom: 32px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.thesis {
+  display: flex;
+  padding: 32px 24px 32px 24px;
+  gap: 24px;
+}
+.thesis__video--container {
+  overflow: hidden;
+}
+.video {
+  width: 100%;
+}
+.thesis__left {
+  flex: 6;
+}
+.thesis__left--image {
+  display: block;
+  width: 100%;
+}
+.thesis__left--text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+  text-align: left;
+}
+.thesis__left--title {
+  font-size: 20px;
+}
+.thesis__left--subtitle {
+  font-size: 14px;
+}
+.thesis__left--author {
+  font-size: 14px;
+}
+.thesis__right {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+.thesis__card {
+  flex: 1;
+  display: flex;
+  padding: 16px;
+}
+.thesis__card:hover {
+  background: rgb(206, 203, 203);
+}
+.thesis__card--image {
+  flex: 3.5;
+  overflow: hidden;
+}
+.thesis__item {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+}
+.thesis__card--text {
+  flex: 6.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  gap: 8px;
+}
+.thesis__right:hover {
+  background: var(--lightgrey);
+  cursor: pointer;
+}
+@media only screen and (max-width: 720px) {
+  .thesis__left--text,
+  .thesis__right {
+    display: none;
+  }
+}
+
+.footer {
+  border: 2px solid #a9aaad;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f3f5f5;
+  padding-top: 16px;
+  padding-left: 24px;
+}
+.foot__left {
+  flex: 1;
+}
+.foot__right {
+  flex: 1;
+}
+.foot__right--text {
+  text-align: end;
 }
